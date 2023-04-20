@@ -1,0 +1,2 @@
+1. create setup.py file
+2. create project structure
