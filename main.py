@@ -5,7 +5,7 @@ import sys
 
 def test_exception():
     try:
-        logging.info('Divide number')
+        logging.info('Divide number by zero')
         a = 1/0
         
     except Exception as e:
