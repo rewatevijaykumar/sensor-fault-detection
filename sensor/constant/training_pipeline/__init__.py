@@ -5,7 +5,7 @@ from sensor.constant.s3_bucket import TRAINING_BUCKET_NAME
 
 TARGET_COLUMN = 'class'
 PIPELINE_NAME:str = 'sensor'
-ARTIFACT_NAME: str = 'artifact'
+ARTIFACT_DIR: str = 'artifact'
 FILE_NAME:str = 'sensor.csv'
 
 TRAIN_FILE_NAME:str = 'train.csv'
