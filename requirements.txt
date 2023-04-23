@@ -1,2 +1,15 @@
-pymongo==4.2.0
+pymongo[srv]==4.1.1
+certifi
+xgboost
+catboost
+pandas
+numpy
+seaborn
+matplotlib
+scikit-learn
+imblearn
+miceforest
+kneed
+prettytable
+python-dotenv
 -e .
