@@ -1,0 +1,7 @@
+
+
+Check Data Drift (if both dataset follow same distribution or not) using -
+ - Evedently.ai
+ - TensorFlow Data validation from TFX
+ - Scipy.stats.ks_2samp - > 2 sided -> return statistic and pvalue 
+    if pvalue > 0.05 from same distribution - no data drift

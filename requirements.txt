@@ -12,4 +12,5 @@ miceforest
 kneed
 prettytable
 python-dotenv
+PyYAML
 -e .
