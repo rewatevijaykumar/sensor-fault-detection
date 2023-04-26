@@ -9,7 +9,7 @@ import sys
 from sensor.components.data_ingestion import DataIngestion
 from sensor.components.data_validation import DataValidation
 from sensor.components.data_transformation import DataTransformation
-from sensor.components.model_training import ModelTrainer
+from sensor.components.model_trainer import ModelTrainer
 from sensor.components.model_evaluation import ModelEvaluation
 from sensor.components.model_pusher import ModelPusher
 

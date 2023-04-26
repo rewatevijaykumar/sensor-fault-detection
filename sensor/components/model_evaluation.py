@@ -1,3 +1,5 @@
+from tkinter.tix import Tree
+from sensor.constant import training_pipeline
 from sensor.exception import SensorException
 from sensor.logger import logging
 from sensor.entity.artifact_entity import ModelEvaluationArtifact, ModelTrainerArtifact, DataValidationArtifact
@@ -8,6 +10,7 @@ from sensor.ml.model.estimator import SensorModel, ModelResolver
 from sensor.utils.main_utils import load_object, save_object, write_yaml_file
 import pandas as pd
 from sensor.constant.training_pipeline import TARGET_COLUMN
+from sensor.ml.model.estimator import TargetValueMapping
 
 class ModelEvaluation:
     def __init__(self,
@@ -31,6 +34,9 @@ class ModelEvaluation:
             test_df = pd.read_csv(valid_test_file_path)
 
             df = pd.concat([train_df, test_df])
+            y_true = df[TARGET_COLUMN]
+            y_true.replace(TargetValueMapping().to_dict(),inplace=True)
+            df = df.drop(TARGET_COLUMN, axis=1)
 
             # loading trained model
             train_model_file_path = self.model_trainer_artifact.trained_model_file_path
@@ -51,14 +57,14 @@ class ModelEvaluation:
             latest_model_path = model_resolver.get_best_model_path()
             latest_model = load_object(file_path=latest_model_path)
             train_model = load_object(file_path=train_model_file_path)
-            y_true = df[TARGET_COLUMN]
+
             y_trained_pred = train_model.predict(df)
             y_latest_pred = latest_model.predict(df)
 
             trained_metric = get_classification_score(y_true, y_trained_pred)
             latest_metric = get_classification_score(y_true, y_latest_pred)
 
-            improved_accuracy = trained_metric - latest_metric
+            improved_accuracy = trained_metric.f1_score - latest_metric.f1_score
 
             if self.model_evaluation_config.change_threshold < improved_accuracy:
                 is_model_accepted = True
@@ -73,7 +79,7 @@ class ModelEvaluation:
                 train_model_metric_artifact=trained_metric,
                 best_model_metric_artifact=latest_metric)
             
-            model_eval_report = model_evaluation_artifact.__dict__()
+            model_eval_report = model_evaluation_artifact.__dict__
             
             # save report
             write_yaml_file(file_path=self.model_evaluation_config.report_file_path, content=model_eval_report)

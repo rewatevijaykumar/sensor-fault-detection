@@ -20,10 +20,11 @@ class SensorModel:
         self.preprocessor = preprocessor
         self.model = model
 
-    def predict(self):
+    def predict(self,x):
         try:
             x_transform = self.preprocessor.transform(x)
             y_hat = self.model.predict(x_transform)
+            return y_hat
         except Exception as e:
             raise e
         
@@ -50,7 +51,7 @@ class ModelResolver:
             timestamps = os.listdir(self.model_dir)
             if len(timestamps) == 0:
                 return False
-            latest_model_path = self.get_best_model()
+            latest_model_path = self.get_best_model_path()
             if not os.path.exists(latest_model_path):
                 return False
             return True
