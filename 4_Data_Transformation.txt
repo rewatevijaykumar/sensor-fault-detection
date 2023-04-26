@@ -1,0 +1,4 @@
+
+- Use SmoteTomek for resampling to balance the data set
+- replace missing values with mean
+- use RobustScaler to keep every feature in same range and handle outliers
