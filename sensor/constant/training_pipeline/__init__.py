@@ -58,3 +58,9 @@ Model Evaluation related constant start with MODEL_EVALUATION VAR NAME
 MODEL_EVALUATION_DIR_NAME:str = 'model_evaluation'
 MODEL_EVALUATION_CHANGED_THRESHOLD_SCORE:float = 0.02
 MODEL_EVALUATION_REPORT_FILE_NAME:str = 'report.yaml'
+
+'''
+Model Pusher related constant start with MODEL_PUSHER VAR NAME
+'''
+MODEL_PUSHER_DIR_NAME:str = 'model_pusher'
+MODEL_PUSHER_SAVED_MODEL_DIR:str = SAVED_MODEL_DIR
