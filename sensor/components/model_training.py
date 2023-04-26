@@ -1,5 +1,3 @@
-from scipy.fftpack import diff
-from sklearn.metrics import f1_score
 from sensor.logger import logging
 from sensor.exception import SensorException
 from sensor.ml.metric import classification_metric
