@@ -1,6 +1,5 @@
 import os
 import numpy as np
-from psutil import sensors_battery
 import yaml
 import sys
 from sensor.exception import SensorException

@@ -20,3 +20,18 @@ The problem is to reduce the cost due to unnecessary repairs. So it is required 
 4. Docker
 5. MongoDB
 
+## Deploy using docker
+
+### 1. Build ->
+`
+docker -t <docker-image-name> . 
+`
+### 2. Check docker images ->
+`
+docker images
+`
+### 3. Run docker image ->
+`
+docker run -p <host-port>:<container-port> <docker-image>
+`
+

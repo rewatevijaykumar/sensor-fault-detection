@@ -3,10 +3,6 @@ from sensor.logger import logging
 from sensor.entity.artifact_entity import ModelEvaluationArtifact, ModelPusherArtifact, ModelTrainerArtifact, DataValidationArtifact
 from sensor.entity.config_entity import ModelPusherConfig
 import os,sys
-from sensor.ml.metric.classification_metric import get_classification_score
-from sensor.ml.model.estimator import SensorModel, ModelResolver
-from sensor.utils.main_utils import load_object, save_object, write_yaml_file
-from sensor.constant.training_pipeline import TARGET_COLUMN
 import shutil
 
 class ModelPusher:

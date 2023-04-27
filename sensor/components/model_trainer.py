@@ -1,6 +1,5 @@
 from sensor.logger import logging
 from sensor.exception import SensorException
-from sensor.ml.metric import classification_metric
 from sensor.utils.main_utils import load_numpy_array_data, save_object, load_object
 from sensor.entity.artifact_entity import DataTransformationArtifact, ModelTrainerArtifact
 from sensor.entity.config_entity import ModelTrainerConfig

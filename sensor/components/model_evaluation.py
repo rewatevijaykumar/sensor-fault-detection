@@ -1,4 +1,3 @@
-from tkinter.tix import Tree
 from sensor.constant import training_pipeline
 from sensor.exception import SensorException
 from sensor.logger import logging

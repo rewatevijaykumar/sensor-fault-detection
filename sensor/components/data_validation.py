@@ -1,4 +1,3 @@
-from os import write
 import os
 import sys
 from sensor.constant.training_pipeline import SCHEMA_FILE_PATH
