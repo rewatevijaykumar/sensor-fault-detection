@@ -15,4 +15,7 @@ python-dotenv
 scipy
 PyYAML
 dill
+uvicorn
+fastapi
+python-multipart
 -e .

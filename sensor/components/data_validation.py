@@ -134,8 +134,5 @@ class DataValidation:
             
             return data_validation_artifact
 
-
-            
-
         except Exception as e:
             raise SensorException(e,sys)
